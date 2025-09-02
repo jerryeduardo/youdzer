@@ -27,7 +27,7 @@ def main_menu():
         print("10. Atualizar metadados pelo Deezer com base na URL da música")
         print("11. Atualizar metadados pelo Deezer com base no nome do artista e título da música")
         print("12. Atualizar metadados de todos os arquivos MP3 em um diretório pelo Deezer")
-        print("13. Sair ")
+        print("13. Sair")
         
         choice = input("\nEscolha uma opção (1/2/3/4/5/6/7/8/9/10/11/12/13): ")
         
