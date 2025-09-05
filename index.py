@@ -8,7 +8,6 @@ from verify_mp4 import verify_video
 from verify_all_mp3 import verify_all_audio
 from verify_all_mp4 import verify_all_video
 from convert_avi_mp4 import convert_video
-from convert_all_avi_mp4 import convert_all_video
 from update_tags_url import update_tags_url_audio
 from update_tags_artist_tracktitle import update_tags_artist_tracktitle_audio
 from update_tags_all_mp3 import update_tags_all_mp3_audio
@@ -64,9 +63,6 @@ def main_menu():
 
         elif choice == '10':
             convert_video()
-        
-        elif choice == '11':
-            convert_all_video()
 
         elif choice == '12':
             update_tags_url_audio()
