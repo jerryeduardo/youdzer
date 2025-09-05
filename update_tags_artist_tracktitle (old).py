@@ -153,7 +153,7 @@ def update_tags_for_downloaded_file_artist_tracktitle_audio(output_path, file_na
             print(f"Arquivo renomeado para {subtract_string(new_file_name)}")
 
 def update_tags_artist_tracktitle_audio():
-    output_path = output_dir_create('mp3') # Diretório onde os arquivos serão salvos e pesquisados
+    output_path = output_dir_create('mp3') # Diretório onde os arquivos serão pesquisados
     file_name_with_extension = input("\nDigite o título do arquivo com a extensão .mp3: ")
     update_tags_for_downloaded_file_artist_tracktitle_audio(output_path, file_name_with_extension)
 

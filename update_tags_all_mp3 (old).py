@@ -32,7 +32,7 @@ def update_tags_for_downloaded_file_all_mp3_audio(output_path):
             print(f"Arquivo renomeado para {subtract_string(new_file_name)}")
 
 def update_tags_all_mp3_audio():
-    output_path = output_dir_create('mp3') # Diretório onde os arquivos serão salvos e pesquisados
+    output_path = output_dir_create('mp3') # Diretório onde os arquivos serão pesquisados
     update_tags_for_downloaded_file_all_mp3_audio(output_path)
 
 if __name__ == "__main__":

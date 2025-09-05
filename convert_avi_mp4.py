@@ -12,6 +12,7 @@ def converter_avi_mp4(output_path, file_name_with_extension):
     output_folder = os.path.dirname(output_mp4)
 
     try:
+        print(f"")
         ffmpeg.input(file_path).output(output_mp4, 
             s="1920x1080", 
             r=30, 
@@ -31,7 +32,7 @@ def converter_avi_mp4(output_path, file_name_with_extension):
 def convert_video():
     choice = input("\nVocê deseja converter um arquivo de vídeo AVI do diretório padrão? (Responda com 's' para sim ou 'n' para não): ").lower()
     if choice == 's':
-        output_path = output_dir_create('avi') ########### Diretório onde os arquivos serão salvos e pesquisados
+        output_path = output_dir_create('avi') # Diretório onde os arquivos serão pesquisados
         file_name_with_extension = input("\nDigite o título do arquivo com a extensão .avi: ")
         converter_avi_mp4(output_path, file_name_with_extension)
     elif choice == 'n':

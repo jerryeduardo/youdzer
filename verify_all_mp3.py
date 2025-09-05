@@ -43,7 +43,7 @@ def get_all_mp3_info(output_path):
 def verify_all_audio():
     choice = input("\nVocê deseja verificar a qualidade dos arquivos MP3 do diretório padrão? (Responda com 's' para sim ou 'n' para não): ").lower()
     if choice == 's':
-        output_path = output_dir_create('mp3') # Diretório onde os arquivos serão salvos e pesquisados
+        output_path = output_dir_create('mp3') # Diretório onde os arquivos serão pesquisados
         get_all_mp3_info(output_path)
     elif choice == 'n':
         output_path = input("\nInforme o caminho do diretório onde está os arquivos MP3 (Exemplo: /home/seuusuario/Downloads/): ")

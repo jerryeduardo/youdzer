@@ -95,7 +95,7 @@ def update_tags_for_downloaded_file_url_audio(output_path, file_name_with_extens
 def update_tags_url_audio():
     choice = input("\nVocê deseja atualizar os metatados de um arquivo MP3 do diretório padrão? (Responda com 's' para sim ou 'n' para não): ").lower()
     if choice == 's':
-        output_path = output_dir_create('mp3') # Diretório onde os arquivos serão salvos e pesquisados
+        output_path = output_dir_create('mp3') # Diretório onde os arquivos serão pesquisados
         file_name_with_extension = input("\nDigite o título do arquivo com a extensão .mp3: ")
         update_tags_for_downloaded_file_url_audio(output_path, file_name_with_extension)
     elif choice == 'n':

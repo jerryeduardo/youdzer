@@ -17,10 +17,12 @@ def converter_all_avi_mp4(output_path):
     # Converte cada arquivo de vídeo AVI encontrado
     for filename in avi_files:
         file_path = os.path.join(output_path, filename)
-        output_mp4 = os.path.join(output_dir_create('mp4'), filename + ".mp4")
+        file_name_without_extension = os.path.splitext(filename)[0]
+        output_mp4 = os.path.join(output_dir_create('mp4'), file_name_without_extension + ".mp4")
         output_folder = os.path.dirname(output_mp4)
 
         try:
+            print(f"")
             ffmpeg.input(file_path).output(output_mp4, 
                 s="1920x1080", 
                 r=30, 
@@ -32,7 +34,7 @@ def converter_all_avi_mp4(output_path):
                 preset='medium', 
                 pix_fmt='yuv420p').run()
             print(f"\nVídeo convertido e salvo com sucesso.")
-            print(f"Título do arquivo de vídeo AVI após a conversão para MP4: {filename}")
+            print(f"Título do arquivo de vídeo AVI após a conversão para MP4: {file_name_without_extension}")
             print(f"Caminho onde está o arquivo de vídeo convertido para MP4: {output_folder}")
         except Exception as e:
             print(f"Erro ao executar o ffmpeg: {e}")
@@ -40,7 +42,7 @@ def converter_all_avi_mp4(output_path):
 def convert_all_video():
     choice = input("\nVocê deseja converter os arquivos de vídeo AVI do diretório padrão? (Responda com 's' para sim ou 'n' para não): ").lower()
     if choice == 's':
-        output_path = output_dir_create('avi') ########### Diretório onde os arquivos serão salvos e pesquisados
+        output_path = output_dir_create('avi') # Diretório onde os arquivos serão pesquisados
         converter_all_avi_mp4(output_path)
     elif choice == 'n':
         output_path = input("\nInforme o caminho do diretório onde está os arquivos AVI (Exemplo: /home/seuusuario/Downloads/): ")

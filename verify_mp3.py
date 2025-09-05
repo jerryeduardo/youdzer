@@ -32,7 +32,7 @@ def get_mp3_info(output_path, file_name_with_extension):
 def verify_audio():
     choice = input("\nVocê deseja verificar a qualidade de um arquivo MP3 do diretório padrão? (Responda com 's' para sim ou 'n' para não): ").lower()
     if choice == 's':
-        output_path = output_dir_create('mp3') # Diretório onde os arquivos serão salvos e pesquisados
+        output_path = output_dir_create('mp3') # Diretório onde os arquivos serão pesquisados
         file_name_with_extension = input("\nDigite o título do arquivo com a extensão .mp3: ")
         get_mp3_info(output_path, file_name_with_extension)
     elif choice == 'n':
