@@ -9,13 +9,14 @@ from verify_all_mp3 import verify_all_audio
 from verify_all_mp4 import verify_all_video
 from convert_avi_mp4 import convert_video
 from convert_all_avi_mp4 import convert_all_video
+from join_all_mp3 import join_all_audio
 from update_tags_url import update_tags_url_audio
 from update_tags_artist_tracktitle import update_tags_artist_tracktitle_audio
 from update_tags_all_mp3 import update_tags_all_mp3_audio
 
 def main_menu():
     while True:
-        print("\n----------------------------------------------------------------------------v1.6")
+        print("\n----------------------------------------------------------------------------v1.7")
         print("Menu:")
         print("1. Baixar música ou playlist do YouTube com atualização de metadados pelo Deezer")
         print("2. Baixar música do YouTube")
@@ -28,10 +29,11 @@ def main_menu():
         print("9. Verificar a qualidade de todos os arquivos MP4 em um diretório")
         print("10. Converter um arquivo de vídeo AVI para MP4")
         print("11. Converter todos os arquivos de vídeo AVI para MP4 em um diretório")
-        print("12. Atualizar metadados pelo Deezer com base na URL da música")
-        print("13. Atualizar metadados pelo Deezer com base no nome do artista e título da música")
-        print("14. Atualizar metadados de todos os arquivos MP3 em um diretório pelo Deezer")
-        print("15. Sair")
+        print("12. ??")
+        print("13. Atualizar metadados pelo Deezer com base na URL da música")
+        print("14. Atualizar metadados pelo Deezer com base no nome do artista e título da música")
+        print("15. Atualizar metadados de todos os arquivos MP3 em um diretório pelo Deezer")
+        print("16. Sair")
         
         choice = input("\nEscolha uma opção (1/2/3/4/5/6/7/8/9/10/11/12/13/14/15): ")
         
@@ -69,15 +71,18 @@ def main_menu():
             convert_all_video()
 
         elif choice == '12':
-            update_tags_url_audio()
+            join_all_audio()
 
         elif choice == '13':
-            update_tags_artist_tracktitle_audio()
+            update_tags_url_audio()
 
         elif choice == '14':
-            update_tags_all_mp3_audio()
+            update_tags_artist_tracktitle_audio()
 
         elif choice == '15':
+            update_tags_all_mp3_audio()
+
+        elif choice == '16':
             print("Saindo...")
             break
 

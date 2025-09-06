@@ -1,0 +1,31 @@
+# Melhorias
+
+atualização v1.1
+
+Instalação no sistema (nas pastas do sistema {/})
+Verificar música e vídeo de outra pasta e Atualizar música de outra pasta
+Pesquisa com base em nome do artista e título da música retorna 3 opções para escolher
+
+atualização v1.2
+
+Buscar na API do Deezer o número da faixa dentro do álbum para complementar a atualização de metadados
+
+atualização v1.3
+
+Adicionar número da faixa no título do arquivo MP3 se o álbum contiver mais de uma faixa
+
+atualização v1.4
+
+Adicionar os artistas colaboradores da faixa no título do arquivo MP3 se a faixa contiver mais de um artista
+
+atualização v1.5
+
+Verificar qualidade de música e vídeo dos arquivos das pastas padrão de uma vez e também verificar de outra pasta
+
+atualização v1.6
+
+Converter arquivos de vídeo AVI para MP4 da pasta padrão de uma vez e também converter de outra pasta
+
+atualização v1.7
+
+Pegar arquivos de música MP3 e juntar em apenas um MP3. Exemplo: 3 arquivos de música MP3 de 3 minutos e juntar todos em um arquivo de música MP3 totalizando 9 minutos
