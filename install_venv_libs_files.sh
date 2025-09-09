@@ -18,8 +18,8 @@ echo "O ambiente virtual 'yd-env' criado no diretório $PYTHON_DESTINATION_DIR"
 
 sleep 0.5  # Espera meio segundo
 source "$PYTHON_DESTINATION_DIR""$VIRTUAL_ENV"
-pip install yt-dlp requests mutagen pillow ffmpeg-python pydub
-echo "As bibliotecas yt-dlp requests mutagen pillow ffmpeg-python pydub foram instaladas."
+pip install yt-dlp requests mutagen pillow ffmpeg-python
+echo "As bibliotecas yt-dlp requests mutagen pillow ffmpeg-python foram instaladas."
 
 echo "Criação do ambiente virtual e a instalação das bibliotecas concluída com sucesso."
 

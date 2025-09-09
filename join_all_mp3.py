@@ -49,7 +49,7 @@ def joinup_all_mp3(output_path):
     print("Iniciando a listagem das músicas já com fade in e out aplicado para a junção")
     with open(concat_list_path, "w", encoding="utf-8") as f:
         for file_path in faded_files:
-            f.write(f"file '{file_path}'\n")
+            f.write(f'file "{file_path}"\n')
             print(f"Adicionando faixa: {subtract_string_temp_faded(file_path)}")
 
     # Extração de caminho do arquivo de audio MP3 após a junção
