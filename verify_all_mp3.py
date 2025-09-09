@@ -1,7 +1,7 @@
-import subprocess
 import os
-from update_tags_artist_tracktitle import is_valid_directory
+import subprocess
 from output_dir import output_dir_create
+from update_tags_artist_tracktitle import is_valid_directory
 
 def get_all_mp3_info(output_path):
     # Verifica se há arquivos MP3 no diretório
@@ -48,11 +48,11 @@ def verify_all_audio():
     elif choice == 'n':
         output_path = input("\nInforme o caminho do diretório onde está os arquivos MP3 (Exemplo: /home/seuusuario/Downloads/): ")
         if not is_valid_directory(output_path):
-            print(f"\nO caminho informado para o diretório é inválido.")
+            print("\nO caminho informado para o diretório é inválido.")
             while not is_valid_directory(output_path):
-                output_path = input(f"Por favor, informe o caminho válido para o diretório: ")
+                output_path = input("Por favor, informe o caminho válido para o diretório: ")
                 if not is_valid_directory(output_path):
-                    print(f"\nO diretório informado ainda é inválido.")
+                    print("\nO diretório informado ainda é inválido.")
         get_all_mp3_info(output_path)
     else: 
         print("\nVocê inseriu uma informação incorreta. Por favor, acesse a opção 8 do menu e tente novamente.")

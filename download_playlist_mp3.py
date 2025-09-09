@@ -24,7 +24,7 @@ def download_youtube_playlist_audio(url, output_path):
         titles = [entry['title'] for entry in info_dict['entries']]
         # Adiciona a extensão .mp3 ao final de cada título
         titles_with_extension = [f"{title}.mp3" for title in titles]
-        print(f"Playlist baixada e salva com sucesso. \nTítulos dos arquivos MP3 baixados: ")
+        print("Playlist baixada e salva com sucesso. \nTítulos dos arquivos MP3 baixados: ")
         for title in titles_with_extension:
             print(f"{title}")
         return titles_with_extension

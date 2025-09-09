@@ -1,7 +1,7 @@
 import ffmpeg
 import os
-from update_tags_artist_tracktitle import is_valid_directory
 from output_dir import output_dir_create
+from update_tags_artist_tracktitle import is_valid_directory
 
 def converter_avi_mp4(output_path, file_name_with_extension):
     # Faz a junção do caminho do diretório com o nome do arquivo acrescido da extensão, 
@@ -23,7 +23,7 @@ def converter_avi_mp4(output_path, file_name_with_extension):
             crf=18, 
             preset='medium', 
             pix_fmt='yuv420p').run()
-        print(f"\nVídeo convertido e salvo com sucesso.")
+        print("\nVídeo convertido e salvo com sucesso.")
         print(f"Título do arquivo de vídeo AVI após a conversão para MP4: {file_name_without_extension}")
         print(f"Caminho onde está o arquivo de vídeo convertido para MP4: {output_folder}")
     except Exception as e:
@@ -38,11 +38,11 @@ def convert_video():
     elif choice == 'n':
         output_path = input("\nInforme o caminho do diretório onde está o arquivo de vídeo AVI (Exemplo: /home/seuusuario/Downloads/): ")
         if not is_valid_directory(output_path):
-            print(f"\nO caminho informado para o diretório é inválido.")
+            print("\nO caminho informado para o diretório é inválido.")
             while not is_valid_directory(output_path):
-                output_path = input(f"Por favor, informe o caminho válido para o diretório: ")
+                output_path = input("Por favor, informe o caminho válido para o diretório: ")
                 if not is_valid_directory(output_path):
-                    print(f"\nO diretório informado ainda é inválido.")  
+                    print("\nO diretório informado ainda é inválido.")  
         file_name_with_extension = input("\nDigite o título do arquivo com a extensão .avi: ")
         converter_avi_mp4(output_path, file_name_with_extension)
     else: 

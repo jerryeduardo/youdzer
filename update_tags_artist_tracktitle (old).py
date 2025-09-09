@@ -1,7 +1,7 @@
+import os
 import requests
 from mutagen.id3 import ID3, TIT2, TPE1, TALB, TYER, TCON, APIC
 from mutagen.id3 import ID3NoHeaderError
-import os
 from io import BytesIO
 from PIL import Image
 from output_dir import output_dir_create

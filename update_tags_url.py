@@ -1,8 +1,8 @@
+import os
 import requests
 import re
-import os
-from update_tags_artist_tracktitle import add_cover_art_audio, update_mp3_tags_audio, rename_file_audio, subtract_string, is_valid_directory
 from output_dir import output_dir_create
+from update_tags_artist_tracktitle import add_cover_art_audio, update_mp3_tags_audio, rename_file_audio, subtract_string, is_valid_directory
 
 DEEZER_API_BASE_URL = 'https://api.deezer.com'
 
@@ -101,11 +101,11 @@ def update_tags_url_audio():
     elif choice == 'n':
         output_path = input("\nInforme o caminho do diretório onde está o arquivo MP3 (Exemplo: /home/seuusuario/Downloads/): ")
         if not is_valid_directory(output_path):
-            print(f"\nO caminho informado para o diretório é inválido.")
+            print("\nO caminho informado para o diretório é inválido.")
             while not is_valid_directory(output_path):
-                output_path = input(f"Por favor, informe o caminho válido para o diretório: ")
+                output_path = input("Por favor, informe o caminho válido para o diretório: ")
                 if not is_valid_directory(output_path):
-                    print(f"\nO diretório informado ainda é inválido.")  
+                    print("\nO diretório informado ainda é inválido.")  
         file_name_with_extension = input("\nDigite o título do arquivo com a extensão .mp3: ")
         update_tags_for_downloaded_file_url_audio(output_path, file_name_with_extension)
     else: 

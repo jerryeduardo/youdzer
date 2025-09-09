@@ -1,7 +1,7 @@
+import os
 import requests
 from mutagen.id3 import ID3, TIT2, TPE1, TALB, TYER, TCON, APIC, TRCK
 from mutagen.id3 import ID3NoHeaderError
-import os
 from io import BytesIO
 from PIL import Image
 from output_dir import output_dir_create
@@ -106,6 +106,33 @@ def display_info(info):
         except ValueError:
             print("\nEntrada inválida. Digite um número.")
 
+def update_mp3_tags_audio(file_path, selected_info):
+    try:
+        if not os.path.exists(file_path):
+            print(f"O arquivo {subtract_string(file_path)} não existe.")
+            return
+
+        try:
+            audio = ID3(file_path)
+        except ID3NoHeaderError:
+            audio = ID3()
+
+        # Remove todas as tags existentes antes de adicionar novas
+        for tag in list(audio.keys()):
+            del audio[tag]
+
+        audio[TIT2] = TIT2(encoding=3, text=selected_info.get('title', ''))
+        audio[TPE1] = TPE1(encoding=3, text=selected_info.get('artist', ''))
+        audio[TALB] = TALB(encoding=3, text=selected_info.get('album', ''))
+        audio[TYER] = TYER(encoding=3, text=selected_info.get('year', ''))
+        audio[TCON] = TCON(encoding=3, text=selected_info.get('genre', ''))
+        audio[TRCK] = TRCK(encoding=3, text=str(selected_info.get('track_number', '')))
+
+        audio.save()
+        print(f"Tags ID3 do arquivo {subtract_string(file_path)} atualizadas com sucesso.")
+    except Exception as e:
+        print(f"Erro ao atualizar as tags ID3: {e}")
+
 def add_cover_art_audio(file_path, cover_url):
     if not cover_url:
         print("Nenhuma capa de álbum fornecida.")
@@ -141,33 +168,6 @@ def add_cover_art_audio(file_path, cover_url):
         print(f"Capa do álbum adicionada com sucesso para {subtract_string(file_path)}")
     except Exception as e:
         print(f"Erro ao adicionar a capa: {e}")
-
-def update_mp3_tags_audio(file_path, selected_info):
-    try:
-        if not os.path.exists(file_path):
-            print(f"O arquivo {subtract_string(file_path)} não existe.")
-            return
-
-        try:
-            audio = ID3(file_path)
-        except ID3NoHeaderError:
-            audio = ID3()
-
-        # Remove todas as tags existentes antes de adicionar novas
-        for tag in list(audio.keys()):
-            del audio[tag]
-
-        audio[TIT2] = TIT2(encoding=3, text=selected_info.get('title', ''))
-        audio[TPE1] = TPE1(encoding=3, text=selected_info.get('artist', ''))
-        audio[TALB] = TALB(encoding=3, text=selected_info.get('album', ''))
-        audio[TYER] = TYER(encoding=3, text=selected_info.get('year', ''))
-        audio[TCON] = TCON(encoding=3, text=selected_info.get('genre', ''))
-        audio[TRCK] = TRCK(encoding=3, text=str(selected_info.get('track_number', '')))
-
-        audio.save()
-        print(f"Tags ID3 do arquivo {subtract_string(file_path)} atualizadas com sucesso.")
-    except Exception as e:
-        print(f"Erro ao atualizar as tags ID3: {e}")
 
 def rename_file_audio(file_path, selected_info):
     try:
@@ -249,11 +249,11 @@ def update_tags_artist_tracktitle_audio():
     elif choice == 'n':
         output_path = input("\nInforme o caminho do diretório onde está o arquivo MP3 (Exemplo: /home/seuusuario/Downloads/): ")
         if not is_valid_directory(output_path):
-            print(f"\nO caminho informado para o diretório é inválido.")
+            print("\nO caminho informado para o diretório é inválido.")
             while not is_valid_directory(output_path):
-                output_path = input(f"Por favor, informe o caminho válido para o diretório: ")
+                output_path = input("Por favor, informe o caminho válido para o diretório: ")
                 if not is_valid_directory(output_path):
-                    print(f"\nO diretório informado ainda é inválido.")  
+                    print("\nO diretório informado ainda é inválido.")  
         file_name_with_extension = input("\nDigite o título do arquivo com a extensão .mp3: ")
         update_tags_for_downloaded_file_artist_tracktitle_audio(output_path, file_name_with_extension)
     else: 

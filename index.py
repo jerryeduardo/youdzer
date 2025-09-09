@@ -29,13 +29,13 @@ def main_menu():
         print("9. Verificar a qualidade de todos os arquivos MP4 em um diretório")
         print("10. Converter um arquivo de vídeo AVI para MP4")
         print("11. Converter todos os arquivos de vídeo AVI para MP4 em um diretório")
-        print("12. ??")
+        print("12. Juntar arquivos MP3 para criar uma playlist e atualizar metadados pelo Deezer")
         print("13. Atualizar metadados pelo Deezer com base na URL da música")
         print("14. Atualizar metadados pelo Deezer com base no nome do artista e título da música")
         print("15. Atualizar metadados de todos os arquivos MP3 em um diretório pelo Deezer")
         print("16. Sair")
         
-        choice = input("\nEscolha uma opção (1/2/3/4/5/6/7/8/9/10/11/12/13/14/15): ")
+        choice = input("\nEscolha uma opção (1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16): ")
         
         if choice == '1':
             download_youdzer_audio()

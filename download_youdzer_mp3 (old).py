@@ -1,8 +1,8 @@
 import os
 from download_mp3 import download_youtube_audio
 from download_playlist_mp3 import download_youtube_playlist_audio
-from update_tags_artist_tracktitle import get_deezer_track_info_audio, add_cover_art_audio, update_mp3_tags_audio, rename_file_audio, subtract_string
 from output_dir import output_dir_create
+from update_tags_artist_tracktitle import get_deezer_track_info_audio, update_mp3_tags_audio, add_cover_art_audio, rename_file_audio, subtract_string
 
 DEEZER_API_BASE_URL = 'https://api.deezer.com'
 
@@ -13,7 +13,7 @@ def update_tags_for_downloaded_files(output_path, titles):
         if not os.path.exists(file_path):
             print(f"\nO arquivo {subtract_string(file_path)} não existe.")
             while not os.path.exists(file_path):
-                file_path = input(f"Por favor, informe o título correto com a extensão .mp3 para o arquivo {title}: ")
+                file_path = input("Por favor, informe o título correto com a extensão .mp3 para o arquivo {title}: ")
                 file_path = os.path.join(output_path, file_path)
                 if not os.path.exists(file_path):
                     print(f"\nO arquivo {title} ainda não foi encontrado. Tente novamente.")
