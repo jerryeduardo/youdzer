@@ -49,7 +49,7 @@ def joinup_all_mp3(output_path):
     print("Iniciando a listagem das músicas já com fade in e out aplicado para a junção")
     with open(concat_list_path, "w", encoding="utf-8") as f:
         for file_path in faded_files:
-            f.write(f'file "{file_path}"\n')
+            f.write(f"file '{file_path}'\n")
             print(f"Adicionando faixa: {subtract_string_temp_faded(file_path)}")
 
     # Extração de caminho do arquivo de audio MP3 após a junção
@@ -60,7 +60,7 @@ def joinup_all_mp3(output_path):
         print("")
         ffmpeg.input(concat_list_path, format='concat', safe=0).output(output_file, 
             acodec='libmp3lame', 
-            audio_bitrate='192k', 
+            **{'b:a': '192k'}, 
             ar=44100).run()
         print("\nJunção dos arquivos de áudio MP3 realizada e salva com sucesso.")
         print(f"Título do arquivo de áudio MP3 após a junção: {subtract_string_join_mp3(output_file)}")

@@ -26,11 +26,9 @@ def converter_all_avi_mp4(output_path):
             ffmpeg.input(file_path).output(output_mp4, 
                 s="1920x1080", 
                 r=30, 
-                video_bitrate='8000k', 
-                audio_bitrate='256k', 
+                crf=18, **{'b:a': '256k'}, 
                 vcodec='libx264', 
                 acodec='aac', 
-                crf=18, 
                 preset='medium', 
                 pix_fmt='yuv420p').run()
             print("\nVídeo convertido e salvo com sucesso.")
