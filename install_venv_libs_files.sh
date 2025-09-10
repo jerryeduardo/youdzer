@@ -36,7 +36,8 @@ echo "O arquivo bash do programa foi copiado para $BASH_DESTINATION_DIR"
 sleep 0.5  # Espera meio segundo
 mkdir -p "$PYTHON_DESTINATION_DIR/mp3"
 mkdir -p "$PYTHON_DESTINATION_DIR/mp4"
-echo "Os diretórios mp3 e mp4 foram criados em $PYTHON_DESTINATION_DIR"
+mkdir -p "$PYTHON_DESTINATION_DIR/avi"
+echo "Os diretórios mp3, mp4 e avi foram criados em $PYTHON_DESTINATION_DIR"
 
 sleep 0.5  # Espera meio segundo
 sudo mkdir -p "$ICON_DESTINATION_DIR"

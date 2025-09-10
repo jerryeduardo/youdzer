@@ -16,9 +16,15 @@ def converter_all_avi_mp4(output_path):
 
     # Converte cada arquivo de vídeo AVI encontrado
     for filename in avi_files:
+        # Faz a junção do caminho do diretório com o nome do arquivo acrescido da extensão .avi, incluindo uma barra no meio das variáveis para acertar o caminho
         file_path = os.path.join(output_path, filename)
+        # Remove a extensão .avi, mantendo apenas o nome do arquivo
         file_name_without_extension = os.path.splitext(filename)[0]
+        # Gera o caminho completo para salvar o arquivo convertido em formato .mp4
         output_mp4 = os.path.join(output_dir_create('mp4'), file_name_without_extension + ".mp4")
+        # Remove o caminho da pasta, mantendo apenas o nome do arquivo acrescido da extensão .mp4
+        output_mp4_with_extension = os.path.basename(output_mp4)
+        # Remove o nome do arquivo e sua extensão .mp4, retornando apenas o caminho da pasta onde ele será salvo
         output_folder = os.path.dirname(output_mp4)
 
         try:
@@ -32,7 +38,7 @@ def converter_all_avi_mp4(output_path):
                 preset='medium', 
                 pix_fmt='yuv420p').run()
             print("\nVídeo convertido e salvo com sucesso.")
-            print(f"Título do arquivo de vídeo AVI após a conversão para MP4: {file_name_without_extension}")
+            print(f"Título do arquivo de vídeo AVI após a conversão para MP4: {output_mp4_with_extension}")
             print(f"Caminho onde está o arquivo de vídeo convertido para MP4: {output_folder}")
         except Exception as e:
             print(f"Erro ao executar o ffmpeg: {e}")

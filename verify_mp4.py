@@ -4,8 +4,7 @@ from output_dir import output_dir_create
 from update_tags_artist_tracktitle import is_valid_directory
 
 def get_mp4_info(output_path, file_name_with_extension):
-    # Faz a junção do caminho do diretório com o nome do arquivo acrescido da extensão, 
-    # incluindo uma barra no meio das variáveis para acertar o caminho
+    # Faz a junção do caminho do diretório com o nome do arquivo acrescido da extensão, incluindo uma barra no meio das variáveis para acertar o caminho
     file_path = os.path.join(output_path, file_name_with_extension)
 
     try:
