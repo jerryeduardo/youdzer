@@ -21,7 +21,6 @@ def update_tags_for_downloaded_files(output_path, titles):
         print(f"\nPara o arquivo {title}:")
         artist = input("Digite o nome do artista: ")
         track_title = input("Digite o título da música: ")
-
         info = get_deezer_track_info_audio(artist, track_title)
 
         if info:
