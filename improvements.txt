@@ -38,4 +38,5 @@ Deletar arquivo join_mp3.py, pois não terá tanta utilidade implementar o recur
 
 atualização v1.9
 
+Portar instalação para o Windows
 Criar interface com o tkinter
