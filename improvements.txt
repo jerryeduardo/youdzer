@@ -41,3 +41,8 @@ atualização v1.9
 Portar instalação para o Windows
 Adicionar função de atualizar metadados da playlist separadamente da função de junção de arquivos MP3
 Criar interface com o tkinter
+
+atualização v1.x
+
+Criação de atalhos para as pastas destinadas aos arquivos MP3, MP4, AVI e Playlists, garantindo que o usuário opere afastado dos arquivos do programa
+Implementação da arquitetura de software baseada no padrão MVC
