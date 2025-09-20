@@ -25,7 +25,7 @@ def joinup_all_mp3(output_path):
     output_file = os.path.join(output_join, name_final + ".mp3")
 
     # Cria pasta temporária para arquivos com fade
-    temp_faded = output_dir_create('mp3/temp_faded')
+    temp_faded = output_dir_create('mp3/temp_faded_' + name_final)
 
     # Aplica fade em cada faixa
     faded_files = []
