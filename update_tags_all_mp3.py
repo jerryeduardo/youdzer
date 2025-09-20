@@ -25,7 +25,7 @@ def update_tags_for_downloaded_file_all_mp3_audio(output_path):
             selected_info = display_info(info)
             if selected_info is None:
                 print("\nConforme solicitado, o arquivo foi mantido como está.")
-                return
+                continue
             update_mp3_tags_audio(file_path, selected_info)
             add_cover_art_audio(file_path, selected_info.get('cover_url'))
             new_file_name = rename_file_audio(file_path, selected_info)
