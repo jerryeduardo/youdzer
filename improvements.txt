@@ -29,3 +29,13 @@ Converter arquivos de vídeo AVI para MP4 da pasta padrão de uma vez e também 
 atualização v1.7
 
 Pegar arquivos de música MP3 e juntar em apenas um MP3. Exemplo: 3 arquivos de música MP3 de 3 minutos e juntar todos em um arquivo de música MP3 totalizando 9 minutos
+
+atualização v1.8
+
+Corrigir erro entre as etapas da opção 15 do menu, devido a saída repentina do fluxo após o usuário escolher não atualizar metadados de alguma música
+Aprimorar código da opção 12 para que a pasta temporário de faded tenha o mesmo título da música após a junção
+Deletar arquivo join_mp3.py, pois não terá tanta utilidade implementar o recurso de junção de poucas faixas manualmente
+
+atualização v1.9
+
+Criar interface com o tkinter
