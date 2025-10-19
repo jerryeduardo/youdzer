@@ -45,8 +45,8 @@ sudo cp "$ICON_FILE" "$ICON_DESTINATION_DIR"
 echo "O ícone do programa foi copiado para $ICON_DESTINATION_DIR"
 
 sleep 0.5  # Espera meio segundo
-sudo mkdir -p "$DESKTOP_DESTINATION_DIR"
+mkdir -p "$DESKTOP_DESTINATION_DIR"
 cp "$DESKTOP_FILE" "$DESKTOP_DESTINATION_DIR"
-echo "O arquivo executável do programa e foi copiado para $DESKTOP_DESTINATION_DIR"
+echo "O arquivo executável do programa foi copiado para $DESKTOP_DESTINATION_DIR"
 
 echo "Instalação dos arquivos concluída com sucesso."
