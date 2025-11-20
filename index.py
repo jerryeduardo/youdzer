@@ -1,6 +1,7 @@
 from download_youdzer_mp3 import download_youdzer_audio
 from download_mp3 import download_audio
 from download_mp4 import download_video
+from download_cut_mp4 import download_cut_video
 from download_playlist_mp3 import download_playlist_audio
 from download_playlist_mp4 import download_playlist_video
 from verify_mp3 import verify_audio
@@ -21,7 +22,7 @@ def main_menu():
         print("1. Baixar música ou playlist do YouTube com atualização de metadados pelo Deezer")
         print("2. Baixar música do YouTube")
         print("3. Baixar vídeo do YouTube")
-        print("4. Baixar corte de vídeo do YouTube")
+        print("4. Baixar vídeo do YouTube e cortar")
         print("5. Baixar playlist de músicas do YouTube")
         print("6. Baixar playlist de vídeos do YouTube")
         print("7. Verificar a qualidade de um arquivo MP3")
@@ -36,7 +37,7 @@ def main_menu():
         print("16. Atualizar metadados de todos os arquivos MP3 de um diretório pelo Deezer")
         print("17. Sair")
         
-        choice = input("\nEscolha uma opção (1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16): ")
+        choice = input("\nEscolha uma opção (1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17): ")
         
         if choice == '1':
             download_youdzer_audio()
@@ -48,7 +49,7 @@ def main_menu():
             download_video()
 
         elif choice == '4':
-            download_clip_video()
+            download_cut_video()
 
         elif choice == '5':
             download_playlist_audio()
