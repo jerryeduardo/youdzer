@@ -16,24 +16,25 @@ from update_tags_all_mp3 import update_tags_all_mp3_audio
 
 def main_menu():
     while True:
-        print("\n----------------------------------------------------------------------------v1.8")
+        print("\n----------------------------------------------------------------------------v1.9")
         print("Menu:")
         print("1. Baixar música ou playlist do YouTube com atualização de metadados pelo Deezer")
         print("2. Baixar música do YouTube")
         print("3. Baixar vídeo do YouTube")
-        print("4. Baixar playlist de músicas do YouTube")
-        print("5. Baixar playlist de vídeos do YouTube")
-        print("6. Verificar a qualidade de um arquivo MP3")
-        print("7. Verificar a qualidade de um arquivo MP4")
-        print("8. Verificar a qualidade de todos os arquivos MP3 de um diretório")
-        print("9. Verificar a qualidade de todos os arquivos MP4 de um diretório")
-        print("10. Converter um arquivo AVI para MP4")
-        print("11. Converter todos os arquivos AVI de um diretório para MP4")
-        print("12. Juntar arquivos MP3 de um diretório para criar uma playlist e atualizar metadados pelo Deezer")
-        print("13. Atualizar metadados pelo Deezer com base na URL da música")
-        print("14. Atualizar metadados pelo Deezer com base no nome do artista e título da música")
-        print("15. Atualizar metadados de todos os arquivos MP3 de um diretório pelo Deezer")
-        print("16. Sair")
+        print("4. Baixar corte de vídeo do YouTube")
+        print("5. Baixar playlist de músicas do YouTube")
+        print("6. Baixar playlist de vídeos do YouTube")
+        print("7. Verificar a qualidade de um arquivo MP3")
+        print("8. Verificar a qualidade de um arquivo MP4")
+        print("9. Verificar a qualidade de todos os arquivos MP3 de um diretório")
+        print("10. Verificar a qualidade de todos os arquivos MP4 de um diretório")
+        print("11. Converter um arquivo AVI para MP4")
+        print("12. Converter todos os arquivos AVI de um diretório para MP4")
+        print("13. Juntar arquivos MP3 de um diretório para criar uma playlist e atualizar metadados pelo Deezer")
+        print("14. Atualizar metadados pelo Deezer com base na URL da música")
+        print("15. Atualizar metadados pelo Deezer com base no nome do artista e título da música")
+        print("16. Atualizar metadados de todos os arquivos MP3 de um diretório pelo Deezer")
+        print("17. Sair")
         
         choice = input("\nEscolha uma opção (1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16): ")
         
@@ -47,42 +48,45 @@ def main_menu():
             download_video()
 
         elif choice == '4':
-            download_playlist_audio()
+            download_clip_video()
 
         elif choice == '5':
-            download_playlist_video()
+            download_playlist_audio()
 
         elif choice == '6':
-            verify_audio()
+            download_playlist_video()
 
         elif choice == '7':
+            verify_audio()
+
+        elif choice == '8':
             verify_video()
         
-        elif choice == '8':
+        elif choice == '9':
             verify_all_audio()
 
-        elif choice == '9':
+        elif choice == '10':
             verify_all_video()
 
-        elif choice == '10':
+        elif choice == '11':
             convert_video()
 
-        elif choice == '11':
+        elif choice == '12':
             convert_all_video()
 
-        elif choice == '12':
+        elif choice == '13':
             join_all_audio()
 
-        elif choice == '13':
+        elif choice == '14':
             update_tags_url_audio()
 
-        elif choice == '14':
+        elif choice == '15':
             update_tags_artist_tracktitle_audio()
 
-        elif choice == '15':
+        elif choice == '16':
             update_tags_all_mp3_audio()
 
-        elif choice == '16':
+        elif choice == '17':
             print("Saindo...")
             break
 
