@@ -38,7 +38,7 @@ Deletar arquivo join_mp3.py, pois não terá tanta utilidade implementar o recur
 
 atualização v1.9
 
-Adicionar função de baixar corte de vídeo do youtube
+Adicionar função de baixar vídeo do youtube e cortar
 Adicionar função de atualizar metadados da playlist separadamente da função de junção de arquivos MP3
 Portar instalação para o Windows
 Criar interface com o tkinter
