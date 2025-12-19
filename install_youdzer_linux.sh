@@ -3,6 +3,7 @@
 # Função para verificar se o Python 3 e suas dependências (pip e venv), bem como o ffmpeg, estão instalados
 install_python3_ffmpeg() {
     echo "Verificando se o Python 3 e suas dependências (pip e venv), bem como o ffmpeg, estão instalados. Se não estiverem, a instalação será iniciada..."
+    sleep 1  # Espera um segundo
     # Verifica se o Python 3 está instalado
     if ! command -v python3 &> /dev/null; then
         echo "Python 3 não está instalado. Instalando..."
@@ -49,10 +50,10 @@ install_venv_libs_files() {
     SOURCE_DIR="$(dirname "$0")"
 
     echo "Iniciando a criação do ambiente virtual do Python 3 e a instalação das bibliotecas necessárias..."
-    sleep 1  # Espera meio segundo
+    sleep 1  # Espera um segundo
     mkdir -p "$PYTHON_DESTINATION_DIR"
     python3 -m venv "$PYTHON_DESTINATION_DIR"yd-env
-    echo "O ambiente virtual 'yd-env' criado no diretório $PYTHON_DESTINATION_DIR"
+    echo "O ambiente virtual 'yd-env' foi criado no diretório $PYTHON_DESTINATION_DIR"
 
     sleep 0.5  # Espera meio segundo
     source "$PYTHON_DESTINATION_DIR""$VIRTUAL_ENV"
@@ -62,7 +63,7 @@ install_venv_libs_files() {
     echo "Criação do ambiente virtual e a instalação das bibliotecas concluída com sucesso."
 
     echo "Iniciando a instalação dos arquivos..."
-    sleep 1  # Espera 1 segundo
+    sleep 1  # Espera um segundo
     cp *.py "$PYTHON_DESTINATION_DIR"
     echo "Todos os arquivos .py foram copiados para $PYTHON_DESTINATION_DIR"
 
@@ -90,7 +91,5 @@ install_venv_libs_files() {
     echo "Instalação dos arquivos concluída com sucesso."
 }
 
-sleep 1  # Espera 1 segundo
 install_python3_ffmpeg
-sleep 1  # Espera 1 segundo
 install_venv_libs_files

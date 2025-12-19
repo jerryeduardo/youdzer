@@ -1,5 +1,11 @@
-Write-Output "Verificando instalação do Python e ffmpeg..."
+$pythonDestinationDir = "$env:USERPROFILE\Documents\YouDzer"
+$venvDir = "$pythonDestinationDir\yd-env"
+$startMenuDir = "$env:ProgramData\Microsoft\Windows\Start Menu\Programs"
+$startMenuShortcut = Join-Path $startMenuDir "YouDzer.lnk"
+$desktopShortcut = "$env:USERPROFILE\Desktop\YouDzer.lnk"
 
+Write-Output "Verificando instalação do Python e ffmpeg..."
+Start-Sleep -Seconds 1
 # Verifica Python
 if (-not (Get-Command python -ErrorAction SilentlyContinue)) {
     Write-Output "Python não encontrado. Instalando via winget..."
@@ -16,30 +22,30 @@ if (-not (Get-Command ffmpeg -ErrorAction SilentlyContinue)) {
     Write-Output "ffmpeg já está instalado."
 }
 
-$PYTHON_DESTINATION_DIR = "$env:USERPROFILE\youdzer"
-$VENV_DIR = "$PYTHON_DESTINATION_DIR\yd-env"
-
-Write-Output "Criando ambiente virtual em $VENV_DIR..."
-python -m venv $VENV_DIR
+Write-Output "Criando ambiente virtual em $venvDir..."
+python -m venv $venvDir
 
 Write-Output "Ativando ambiente virtual..."
-& "$VENV_DIR\Scripts\Activate.ps1"
+. "$venvDir\Scripts\Activate.ps1"
 
 Write-Output "Instalando bibliotecas necessárias..."
+# $venvDir\Scripts\python.exe -m pip install yt-dlp requests mutagen pillow ffmpeg-python
 pip install yt-dlp requests mutagen pillow ffmpeg-python
 
-Write-Output "Copiando arquivos do projeto..."
-New-Item -ItemType Directory -Force -Path $PYTHON_DESTINATION_DIR
-Copy-Item *.py $PYTHON_DESTINATION_DIR
+Write-Output "Copiando arquivos do programa..."
+New-Item -ItemType Directory -Force -Path $pythonDestinationDir
+Copy-Item *.py $pythonDestinationDir
 
 Write-Output "Criando pastas de saída..."
-New-Item -ItemType Directory -Force -Path "$PYTHON_DESTINATION_DIR\mp3"
-New-Item -ItemType Directory -Force -Path "$PYTHON_DESTINATION_DIR\mp4"
-New-Item -ItemType Directory -Force -Path "$PYTHON_DESTINATION_DIR\avi"
+New-Item -ItemType Directory -Force -Path "$pythonDestinationDir\mp3"
+New-Item -ItemType Directory -Force -Path "$pythonDestinationDir\mp4"
+New-Item -ItemType Directory -Force -Path "$pythonDestinationDir\avi"
 
-$WshShell = New-Object -ComObject WScript.Shell
-$Shortcut = $WshShell.CreateShortcut("$env:USERPROFILE\Desktop\Youdzer.lnk")
-$Shortcut.TargetPath = "$PYTHON_DESTINATION_DIR\yd-env\Scripts\python.exe"
-$Shortcut.Arguments = "$PYTHON_DESTINATION_DIR\index.py"
+Write-Output "Criando atalho no Menu Iniciar e copiando para a Área de Trabalho..."
+$WshShell = New-Object -ComObject WScript.Shell 
+$Shortcut = $WshShell.CreateShortcut($startMenuShortcut) 
+$Shortcut.TargetPath = "$pythonDestinationDir\yd-env\Scripts\python.exe"
+$Shortcut.Arguments = "$pythonDestinationDir\index.py"
 $Shortcut.IconLocation = "icons\512x512\youdzer.ico"
 $Shortcut.Save()
+Copy-Item $startMenuShortcut $desktopShortcut -Force
