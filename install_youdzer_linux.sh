@@ -2,7 +2,7 @@
 
 # Função para verificar se o Python 3 e suas dependências (pip e venv), bem como o ffmpeg, estão instalados
 install_python3_ffmpeg() {
-    echo "Verificando se o Python 3 e suas dependências (pip e venv), bem como o ffmpeg, estão instalados. Se não estiverem, a instalação será iniciada..."
+    echo "Verificando se o Python 3 e suas dependências (pip e venv), bem como o FFmpeg, estão instalados. Se não estiverem, a instalação será iniciada..."
     sleep 1  # Espera um segundo
     # Verifica se o Python 3 está instalado
     if ! command -v python3 &> /dev/null; then
@@ -30,21 +30,21 @@ install_python3_ffmpeg() {
 
     # Verifica se o ffmpeg está instalado
     if ! command -v ffmpeg &> /dev/null; then
-        echo "ffmpeg não está instalado. Instalando..."
+        echo "FFmpeg não está instalado. Instalando..."
         sudo apt install -y ffmpeg
     else
-        echo "ffmpeg já está instalado."
+        echo "FFmpeg já está instalado."
     fi
 }
 
 # Função para criar o ambiente virtual do Python 3, instalar as bibliotecas necessárias e os arquivos
 install_venv_libs_files() {
     BASH_FILE="youdzer.sh"
-    ICON_FILE="icons/512x512/youdzer.svg"
+    ICON_FILE="assets/icons/512x512/youdzer.svg"
     DESKTOP_FILE="youdzer.desktop"
     PYTHON_DESTINATION_DIR=""$HOME"/youdzer/"
     BASH_DESTINATION_DIR="/usr/local/bin/youdzer/"
-    ICON_DESTINATION_DIR="/usr/share/icons/youdzer/icons/512x512/"
+    ICON_DESTINATION_DIR="/usr/share/icons/youdzer/assets/icons/512x512/"
     DESKTOP_DESTINATION_DIR=""$HOME"/.local/share/applications/"
     VIRTUAL_ENV="yd-env/bin/activate"
     SOURCE_DIR="$(dirname "$0")"
@@ -76,7 +76,7 @@ install_venv_libs_files() {
     mkdir -p "$PYTHON_DESTINATION_DIR/mp3"
     mkdir -p "$PYTHON_DESTINATION_DIR/mp4"
     mkdir -p "$PYTHON_DESTINATION_DIR/avi"
-    echo "Os diretórios mp3, mp4 e avi foram criados em $PYTHON_DESTINATION_DIR"
+    echo "Os diretórios icons, mp3, mp4 e avi foram criados em $PYTHON_DESTINATION_DIR"
 
     sleep 0.5  # Espera meio segundo
     sudo mkdir -p "$ICON_DESTINATION_DIR"
@@ -89,6 +89,7 @@ install_venv_libs_files() {
     echo "O arquivo executável do programa foi copiado para $DESKTOP_DESTINATION_DIR"
 
     echo "Instalação dos arquivos concluída com sucesso."
+    echo "Instalação concluída com sucesso."
 }
 
 install_python3_ffmpeg

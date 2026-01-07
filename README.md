@@ -14,8 +14,7 @@ sudo apt install -y git
 ```
 Agora, clone este repositório:
 ```
-cd ~/Downloads/
-git clone https://github.com/jerryeduardo/youdzer
+cd ~/Downloads/ && git clone https://github.com/jerryeduardo/youdzer
 ```
 Vá para o diretório youdzer:
 ```
@@ -41,8 +40,7 @@ winget install -e --id Git.Git
 ```
 Agora, clone este repositório:
 ```
-cd $env:USERPROFILE\Downloads 
-git clone https://github.com/jerryeduardo/youdzer
+cd $env:USERPROFILE\Downloads; git clone https://github.com/jerryeduardo/youdzer
 ```
 Se for a primeira vez rodando scripts, habilite a execução com:
 ```
