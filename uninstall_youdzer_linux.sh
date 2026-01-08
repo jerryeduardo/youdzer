@@ -50,7 +50,7 @@ uninstall_youdzer() {
         echo "Ícone do programa "$ICON_DESTINATION_DIR" não foi encontrado." 
     fi
 
-    if [ -d "$DESKTOP_DESTINATION_DIR""$DESKTOP_FILE" ]; then 
+    if [ -f "$DESKTOP_DESTINATION_DIR""$DESKTOP_FILE" ]; then 
         sudo rm -f "$DESKTOP_DESTINATION_DIR""$DESKTOP_FILE"
         echo "Arquivo executável do programa foi removido."
     else 
